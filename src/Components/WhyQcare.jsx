@@ -69,14 +69,14 @@ const WhyQcare = () => {
   };
 
   return (
-    <section id="why-qcare" className="relative py-16 lg:py-24">
+    <section id="why-qcare" className="relative py-16 lg:py-16">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-14 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
             Why Hospitals Choose QCare
           </h2>
-          <p className="mt-6 text-md leading-relaxed text-slate-600">
+          <p className="mt-6 text-xl leading-relaxed text-slate-800">
             Transform your operations with measurable results that impact your
             bottom line.
           </p>
@@ -91,7 +91,7 @@ const WhyQcare = () => {
             >
               <div className="mb-4 flex items-start gap-4">
                 <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-lg ${getBgColor(
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg ${getBgColor(
                     feature.color
                   )} flex-shrink-0`}
                 >
@@ -107,9 +107,9 @@ const WhyQcare = () => {
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="font-bold text-slate-900">{feature.title}</h3>
+                <h3 className="font-bold  text-slate-900">{feature.title}</h3>
               </div>
-              <p className="text-sm text-slate-600">{feature.description}</p>
+              <p className="text-base text-slate-800">{feature.description}</p>
             </div>
           ))}
         </div>

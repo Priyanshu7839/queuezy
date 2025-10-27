@@ -2,14 +2,14 @@ import React from "react";
 
 export default function OurSolutions() {
   return (
-    <section className="py-20 px-4 sm:px-6 bg-white">
+    <section id="solution" className="py-16 px-4 sm:px-6 bg-white">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl mb-4">
             No More Double Booking Chaos
           </h2>
-          <p className="text-md leading-relaxed text-slate-600 max-w-3xl mx-auto">
+          <p className="text-base leading-relaxed text-slate-800 max-w-3xl mx-auto">
             QCare's centralized booking system ensures perfect coordination
             between patient self-bookings and staff bookings – eliminating
             conflicts and confusion.
@@ -34,25 +34,25 @@ export default function OurSolutions() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-red-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Patient books online for 2:00 PM
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-red-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Staff books another patient for same slot
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-red-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Both patients show up → confusion & anger
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-red-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Wrong wait times shown to everyone
                   </span>
                 </li>
@@ -73,25 +73,25 @@ export default function OurSolutions() {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Patient books online → gets token #15
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Staff books at reception → auto gets #16
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Real-time sync prevents any conflicts
                   </span>
                 </li>
                 <li className="flex items-start gap-3 text-slate-700">
                   <span className="flex-shrink-0 w-2 h-2 rounded-full bg-emerald-600 mt-2"></span>
-                  <span className="text-sm">
+                  <span className="text-base">
                     Accurate wait times for everyone
                   </span>
                 </li>
@@ -137,7 +137,7 @@ export default function OurSolutions() {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                      transform="rotate(90 12 12)"
+                      transform="rotate(12 90)"
                     />
                   </svg>
                 </div>
@@ -147,7 +147,7 @@ export default function OurSolutions() {
                   <h4 className="font-bold text-slate-900 mb-2">
                     Centralized Queue
                   </h4>
-                  <p className="text-sm text-slate-600">
+                  <p className="text-base text-slate-700">
                     Real-time synchronization
                   </p>
                 </div>
@@ -165,7 +165,7 @@ export default function OurSolutions() {
                       strokeLinejoin="round"
                       strokeWidth={2}
                       d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                      transform="rotate(90 12 12)"
+                      transform="rotate(90  12)"
                     />
                   </svg>
                 </div>

@@ -144,26 +144,26 @@ const KeyFeatures = () => {
       <div
         className={`flex h-12 w-12 items-center justify-center rounded-lg ${getBackgroundColor(
           feature.color
-        )} flex-shrink-0`}
+        )} flex-shrink-2`}
       >
         {renderIcon(feature.icon, getIconColor(feature.color))}
       </div>
       <div>
         <h4 className="font-bold text-slate-900">{feature.title}</h4>
-        <p className="text-sm text-slate-600">{feature.description}</p>
+        <p className="text-base text-slate-700">{feature.description}</p>
       </div>
     </div>
   );
 
   return (
-    <section id="key-features" className="relative py-16 lg:py-24">
+    <section id="key-features" className="relative py-16 lg:py-16">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-14 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
             Key Features
           </h2>
-          <p className="mt-6 text-md leading-relaxed text-slate-600">
+          <p className="mt-6 text-lg leading-relaxed text-slate-700">
             Powerful capabilities designed to streamline hospital operations
           </p>
         </div>
@@ -171,7 +171,7 @@ const KeyFeatures = () => {
         {/* Top Section: Features Left, Image Right */}
         <div className="mb-12 grid gap-12 lg:grid-cols-2">
           {/* Left: Features */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             {topFeatures.map((feature, index) => (
               <FeatureCard key={index} feature={feature} />
             ))}

@@ -1,27 +1,9 @@
 import React from "react";
 
+import { NAV_ITEMS } from "../constants/navigation";
+import { FOOTER_SECTIONS } from "../constants/footerNavigation";
+
 const Footer = () => {
-  const productLinks = [
-    { name: "Features", href: "#" },
-    { name: "Pricing", href: "#" },
-    { name: "Integrations", href: "#" },
-    { name: "API Documentation", href: "#" },
-  ];
-
-  const supportLinks = [
-    { name: "Help Center", href: "#" },
-    { name: "Contact Support", href: "#" },
-    { name: "Implementation Guide", href: "#" },
-    { name: "Training Resources", href: "#" },
-  ];
-
-  const companyLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Case Studies", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Service", href: "#" },
-  ];
-
   return (
     <footer className="bg-slate-950 text-slate-100">
       {/* Main Footer Content */}
@@ -50,71 +32,45 @@ const Footer = () => {
               patients worldwide.
             </p>
 
-            {/* Compliance Badge */}
-            <div className="flex items-center gap-2 text-xs text-slate-400">
-              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-                <path
-                  fillRule="evenodd"
-                  d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              <span>HIPAA Compliant • SOC 2 Certified</span>
+            {/* Header links replicated */}
+            <div>
+              <h3 className="font-semibold text-white text-sm uppercase tracking-wider mb-4">
+                Quick Navigation
+              </h3>
+              <ul className="space-y-3 text-sm text-slate-400">
+                {NAV_ITEMS.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      href={item.href}
+                      className="transition-colors hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
           {/* Right Columns - Link Sections */}
-          <div className="md:col-span-9 grid grid-cols-3 gap-12">
-            {/* Product Column */}
-            <div>
-              <h3 className="font-bold text-white text-base mb-6">Product</h3>
-              <ul className="space-y-4">
-                {productLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-slate-400 hover:text-white text-sm transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Support Column */}
-            <div>
-              <h3 className="font-bold text-white text-base mb-6">Support</h3>
-              <ul className="space-y-4">
-                {supportLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-slate-400 hover:text-white text-sm transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company Column */}
-            <div>
-              <h3 className="font-bold text-white text-base mb-6">Company</h3>
-              <ul className="space-y-4">
-                {companyLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-slate-400 hover:text-white text-sm transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="md:col-span-9 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+            {FOOTER_SECTIONS.map((section) => (
+              <div key={section.title}>
+                <h3 className="font-bold text-white text-base mb-6">{section.title}</h3>
+                <ul className="space-y-4">
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="text-slate-400 hover:text-white text-sm transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 

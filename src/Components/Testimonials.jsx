@@ -59,14 +59,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="relative py-16 lg:py-24">
+    <section id="testimonials" className="relative py-16 lg:py-16">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-14 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl">
             Loved by Hospital Teams
           </h2>
-          <p className="mt-6 text-md leading-relaxed text-slate-600">
+          <p className="mt-6 text-lg leading-relaxed text-slate-600">
             Hear from healthcare professionals who've transformed their
             operations with QCare
           </p>

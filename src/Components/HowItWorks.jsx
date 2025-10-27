@@ -47,14 +47,14 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
+    <section id="how-it-works" className="py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl mb-4">
             How It Works
           </h2>
-          <p className="text-md leading-relaxed text-slate-600 max-w-2xl mx-auto">
+          <p className="text-base leading-relaxed text-slate-800 max-w-2xl mx-auto">
             Simple flow that transforms your hospital operations in 5 easy
             steps.
           </p>
@@ -75,12 +75,12 @@ export default function HowItWorks() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+              <h3 className="text-lg font-bold text-slate-900 mb-3">
                 {step.title}
               </h3>
 
               {/* Description */}
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-800 text-[15px] leading-relaxed">
                 {step.description}
               </p>
             </div>

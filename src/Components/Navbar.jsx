@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 
-const NAV_LINKS = [
-  { label: "Solution", href: "#solution" },
-  { label: "Features", href: "#features" },
-  { label: "Pricing", href: "#pricing" },
-];
+import { NAV_ITEMS } from "../constants/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
+  const closeMenu = () => setIsMenuOpen(false);
 
   useEffect(() => {
     const closeMenuOnResize = () => {
@@ -20,11 +18,24 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", closeMenuOnResize);
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
-  const closeMenu = () => setIsMenuOpen(false);
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+
+    const target = document.querySelector(href);
+    if (target) {
+      const headerOffset = 88;
+      const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.history.pushState(null, "", href);
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+
+    closeMenu();
+  };
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-slate-100 bg-white/95 shadow-sm backdrop-blur">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a
           className="flex items-center gap-3 rounded-full px-2 py-1 transition hover:bg-slate-100"
@@ -63,11 +74,12 @@ const Navbar = () => {
         </a>
 
         <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 lg:flex">
-          {NAV_LINKS.map((link) => (
+          {NAV_ITEMS.map((link) => (
             <a
               key={link.label}
-              className="transition hover:text-slate-900"
+              className="transition hover:text-slate-900 focus:outline-none focus-visible:text-slate-900"
               href={link.href}
+              onClick={(event) => handleNavClick(event, link.href)}
             >
               {link.label}
             </a>
@@ -76,21 +88,23 @@ const Navbar = () => {
 
         <div className="hidden items-center gap-3 lg:flex">
           <a
-            className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-white"
+            className="rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200"
             href="#how-it-works"
+            onClick={(event) => handleNavClick(event, "#how-it-works")}
           >
             See How It Works
           </a>
           <a
-            className="rounded-full bg-gradient-to-r from-[#2667FF] to-[#3B82FF] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:shadow-md"
+            className="rounded-full bg-gradient-to-r from-[#2667FF] to-[#3B82FF] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2667FF]/60"
             href="#book-demo"
+            onClick={(event) => handleNavClick(event, "#book-demo")}
           >
             Book a Free Demo
           </a>
         </div>
 
         <button
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 transition hover:border-slate-300 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 transition hover:border-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200 lg:hidden"
           type="button"
           aria-label="Toggle navigation"
           aria-expanded={isMenuOpen}
@@ -117,20 +131,24 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`lg:hidden ${
+        className={`lg:hidden overflow-hidden transition-[max-height] duration-300 ease-out ${
           isMenuOpen
-            ? "grid-rows-[1fr] border-b border-slate-100"
-            : "grid-rows-[0fr] border-b border-transparent"
-        } grid overflow-hidden transition-[grid-template-rows] duration-300 ease-out`}
+            ? "max-h-[640px] border-b border-slate-100"
+            : "max-h-0 border-b border-transparent"
+        }`}
       >
-        <div className="space-y-6 bg-white px-4 pb-6 pt-2 shadow-inner sm:px-6">
+        <div
+          className={`space-y-6 bg-white px-4 pb-6 pt-2 shadow-inner transition-all duration-200 sm:px-6 ${
+            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
+          }`}
+        >
           <nav className="flex flex-col gap-4 text-base font-medium text-slate-700">
-            {NAV_LINKS.map((link) => (
+            {NAV_ITEMS.map((link) => (
               <a
                 key={link.label}
-                className="rounded-lg px-2 py-2 transition hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-lg px-2 py-2 transition hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200"
                 href={link.href}
-                onClick={closeMenu}
+                onClick={(event) => handleNavClick(event, link.href)}
               >
                 {link.label}
               </a>
@@ -139,16 +157,16 @@ const Navbar = () => {
 
           <div className="flex flex-col gap-3">
             <a
-              className="rounded-full border border-slate-200 px-5 py-2 text-center text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-white"
+              className="rounded-full border border-slate-200 px-5 py-2 text-center text-sm font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-200"
               href="#how-it-works"
-              onClick={closeMenu}
+              onClick={(event) => handleNavClick(event, "#how-it-works")}
             >
               See How It Works
             </a>
             <a
-              className="rounded-full bg-gradient-to-r from-[#2667FF] to-[#3B82FF] px-5 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:shadow-md"
+              className="rounded-full bg-gradient-to-r from-[#2667FF] to-[#3B82FF] px-5 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2667FF]/60"
               href="#book-demo"
-              onClick={closeMenu}
+              onClick={(event) => handleNavClick(event, "#book-demo")}
             >
               Book a Free Demo
             </a>

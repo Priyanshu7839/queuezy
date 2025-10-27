@@ -96,10 +96,10 @@ const QcareNeed = () => {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Why Hospitals Need QCare
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-500">
+          <p className="mt-4 text-[19px] leading-relaxed text-slate-800">
             The traditional queue system is broken. Here&apos;s the reality most
             hospitals face every day.
           </p>
@@ -118,7 +118,7 @@ const QcareNeed = () => {
                   <path d="M10 2.25a.75.75 0 0 1 .66.39l7 12.25a.75.75 0 0 1-.65 1.13H3a.75.75 0 0 1-.65-1.13l7-12.25A.75.75 0 0 1 10 2.25Zm0 4.5a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 10 6.75Zm0 7.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                 </svg>
               </span>
-              <h3 className="text-2xl font-semibold text-[#e43b39]">
+              <h3 className="text-2xl font-bold text-[#e43b39]">
                 The Problem:
               </h3>
             </div>
@@ -136,10 +136,10 @@ const QcareNeed = () => {
                     </svg>
                   </span>
                   <div className="space-y-1">
-                    <p className="text-base font-semibold text-slate-900">
+                    <p className="text-lg font-semibold text-slate-900">
                       {item.title}
                     </p>
-                    <p className="text-sm leading-relaxed text-slate-500">
+                    <p className="text-base leading-relaxed text-slate-700">
                       {item.description}
                     </p>
                   </div>
@@ -160,7 +160,7 @@ const QcareNeed = () => {
                   <path d="M10 2.25a.75.75 0 0 1 .66.39l7 12.25a.75.75 0 0 1-.65 1.13H3a.75.75 0 0 1-.65-1.13l7-12.25A.75.75 0 0 1 10 2.25Zm0 4.5a.75.75 0 0 0-.75.75v3a.75.75 0 0 0 1.5 0v-3A.75.75 0 0 0 10 6.75Zm0 7.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
                 </svg>
               </span>
-              <h3 className="text-xl font-semibold text-[#e43b39]">
+              <h3 className="text-xl font-bold text-[#e43b39]">
                 The Impact:
               </h3>
             </div>
@@ -175,10 +175,10 @@ const QcareNeed = () => {
                     {item.icon}
                   </span>
                   <div className="space-y-1">
-                    <p className="text-base font-semibold text-slate-900">
+                    <p className="text-lg font-semibold text-slate-900">
                       {item.title}
                     </p>
-                    <p className="text-sm text-slate-500">{item.description}</p>
+                    <p className="text-base text-slate-700">{item.description}</p>
                   </div>
                 </li>
               ))}
